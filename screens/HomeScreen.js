@@ -1,6 +1,7 @@
 import React from "react"
 import { StyleSheet, View, Text, SafeAreaView, Image } from "react-native"
 import tw from 'twrnc';
+import NavOptions from "../components/NavOptions";
 function HomeScreen() {
     return (
         <SafeAreaView style={tw`bg-white h-full`}>
@@ -13,6 +14,7 @@ function HomeScreen() {
 
                         uri: "http://links.papareact.com/gzs"
                     }} />
+                <NavOptions />
             </View>
         </SafeAreaView>
     )
@@ -22,6 +24,6 @@ export default HomeScreen
 
 const styles = StyleSheet.create({
     text: {
-        color: 'blue'
+        color: 'blue',
     }
 })
