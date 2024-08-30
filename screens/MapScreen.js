@@ -22,7 +22,7 @@ function MapScreen() {
                         }}
                     />
                     <Stack.Screen
-                        ame="RideOptionsCard"
+                        name="RideOptionsCard"
                         component={RideOptionsCard}
                         options={{
                             headerShown: false

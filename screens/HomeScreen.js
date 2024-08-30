@@ -52,6 +52,7 @@ function HomeScreen({ }) {
                     }}
                     placeholder="Where From"
                     nearbyPlacesAPI="GooglePlacesSearch"
+                    debounce={400}
 
                 />
                 <NavOptions />
