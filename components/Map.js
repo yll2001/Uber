@@ -8,6 +8,7 @@ function Map() {
     const origin = useSelector(selectOrigin);
     return (
         <MapView
+
             style={tw`flex-1`}
             mapType="mutedStandard"
             initialRegion={{
@@ -17,7 +18,20 @@ function Map() {
                 longitudeDelta: 0.005
             }
             }
-        />
+        >
+            {origin?.location && (
+                <Marker
+                    coordinate={{
+                        latitude: origin.location.lat,
+                        longitude: origin.location.lng,
+                    }}
+                    title="Origin"
+                    description={origin.description}
+                    identifier="origin"
+                />
+            )}
+
+        </MapView>
 
 
     )
