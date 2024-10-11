@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { KeyboardAvoidingView, Platform, StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'react-redux';
 import { store } from './store';
 import HomeScreen from './screens/HomeScreen';
@@ -9,6 +9,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { create } from 'twrnc';
 import MapScreen from './screens/MapScreen';
+import KeyboardAvoidingComponent from './screens/TestScreen';
 
 
 // 1)Setup Redux 
@@ -22,14 +23,21 @@ export default function App() {
       <NavigationContainer>
         <Provider store={store}>
           <SafeAreaProvider>
-            <Stack.Navigator>
-              <Stack.Screen name='HomeScreen' component={HomeScreen} options={{
-                headerShown: false,
-              }} />
-              <Stack.Screen name='MapScreen' component={MapScreen} options={{
-                headerShown: false,
-              }} />
-            </Stack.Navigator>
+            <KeyboardAvoidingView
+              behavior={Platform.OS === "ios" ? "padding" : "height"}
+              style={{ flex: 1 }}>
+              <Stack.Navigator>
+                <Stack.Screen name='HomeScreen' component={HomeScreen} options={{
+                  headerShown: false,
+                }} />
+                <Stack.Screen name='MapScreen' component={MapScreen} options={{
+                  headerShown: false,
+                }} />
+                <Stack.Screen name='TestScreen' component={KeyboardAvoidingComponent} options={{
+                  headerShown: false,
+                }} />
+              </Stack.Navigator>
+            </KeyboardAvoidingView>
           </SafeAreaProvider>
         </Provider>
       </NavigationContainer>

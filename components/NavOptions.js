@@ -1,4 +1,4 @@
-import { View, Text, FlatList, TouchableOpacity, Image } from "react-native"
+import { View, Text, FlatList, TouchableOpacity, Image, } from "react-native"
 import { Icon } from "react-native-elements";
 import { useNavigation } from "@react-navigation/native";
 import tw from 'twrnc';
@@ -17,7 +17,7 @@ const data = [
         id: "456",
         title: "Oder food",
         image: "http://links.papareact.com/28w",
-        screen: 'EatsScreen'
+        screen: 'TestScreen'
     }
 
 ]
